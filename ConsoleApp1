@@ -1,0 +1,51 @@
+using System;
+using System.Numerics;
+
+public class CacpheptinhvoiSoLon
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Nhap so thu nhat (a): ");
+        string inputA = Console.ReadLine();
+
+        Console.WriteLine("Nhap so thu hai (b): ");
+        string inputB = Console.ReadLine();
+
+        if (!BigInteger.TryParse(inputA, out BigInteger a) || !BigInteger.TryParse(inputB, out BigInteger b))
+        {
+            Console.WriteLine("Nhap lieu khong hop le. Vui long nhap so nguyen.");
+            return;
+        }
+
+        BigInteger sum = a + b;
+        BigInteger difference = a - b;
+        BigInteger product = a * b;
+        BigInteger quotient = a / b;
+        BigInteger remainder = a % b;
+
+        Console.WriteLine("Tong: " + sum);
+        Console.WriteLine("Hieu: " + difference);
+        Console.WriteLine("Tich: " + product);
+        Console.WriteLine("Thuong: " + quotient);
+        Console.WriteLine("So du: " + remainder);
+
+        BigInteger power = BigInteger.Pow(a, 3);
+        BigInteger abs = BigInteger.Abs(difference);
+
+        Console.WriteLine("a^3: " + power);
+        Console.WriteLine("|a - b|: " + abs);
+
+        if (a > b)
+        {
+            Console.WriteLine("a lon hon b");
+        }
+        else if (a < b)
+        {
+            Console.WriteLine("a nho hon b");
+        }
+        else
+        {
+            Console.WriteLine("a bang b");
+        }
+    }
+}
